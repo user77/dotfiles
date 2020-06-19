@@ -6,9 +6,12 @@
 
 - link:
     ~/.dotfiles: ''
-    # ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
+    #~/.tmux.conf: tmux.conf
+    #~/.vim: vim
+    ~/.vimrc: vim/vimrc
+    ~/.vim/pack/themes/start:
+      create: true
+      path: vim/pack/themes/start
 
 - create:
     - ~/downloads
