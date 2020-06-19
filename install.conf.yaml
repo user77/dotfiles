@@ -6,15 +6,14 @@
 
 - link:
     ~/.dotfiles: ''
-    #~/.tmux.conf: tmux.conf
-    #~/.vim: vim
     ~/.vimrc: vim/vimrc
     ~/.vim/pack/themes/start:
       create: true
       path: vim/pack/themes/start
+    ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh/themes/dracula.zsh-theme: zsh/themes/dracula/dracula.zsh-theme
 
 - create:
-    - ~/downloads
     - ~/.vim/undo-history
 
 - shell:
