@@ -13,6 +13,9 @@
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh/themes/dracula.zsh-theme: zsh/themes/dracula/dracula.zsh-theme
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/plugins/tpm:
+      create: true
+      path: .tmux/plugins
 
 - create:
     - ~/.vim/undo-history
