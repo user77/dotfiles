@@ -14,3 +14,15 @@
 [submodule "zsh/themes/dracula"]
 	path = zsh/themes/dracula
 	url = https://github.com/dracula/zsh.git
+[submodule "visual-studio"]
+	path = visual-studio
+	url = https://github.com/dracula/visual-studio
+[submodule "vsc/visual-studio"]
+	path = vsc/visual-studio
+	url = https://github.com/dracula/visual-studio
+[submodule "vsc/themes/visual-studio"]
+	path = vsc/themes/visual-studio
+	url = https://github.com/dracula/visual-studio
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
