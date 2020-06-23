@@ -1,5 +1,7 @@
 " term 256
 set t_Co=256
+" fix background colour issue
+set termguicolors
 " enable dracula theme
 packadd! dracula
 colorscheme dracula
