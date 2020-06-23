@@ -15,7 +15,7 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tpm:
       create: true
-      path: .tmux/plugins
+      path: .tmux/plugins/tpm
 
 - create:
     - ~/.vim/undo-history
