@@ -97,3 +97,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 alias qc="~/.scripts/qc.sh"
+alias vpn="~/.scripts/vpn.sh"
