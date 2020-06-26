@@ -74,7 +74,6 @@ plugins=(
   tmux
   history
   web-search
-  
 )
 
 source $ZSH/oh-my-zsh.sh
