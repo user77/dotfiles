@@ -23,4 +23,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [chmod g-w,o-w zsh/oh-my-zsh]
+  - [chmod g-w zsh/oh-my-zsh, Updating permissions]
+  - [chmod o-w zsh/oh-my-zsh, Updating permissions]
