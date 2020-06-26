@@ -11,6 +11,7 @@
       create: true
       path: vim/pack/themes/start
     ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh: zsh/oh-my-zsh 
     ~/.oh-my-zsh/themes/dracula.zsh-theme: zsh/themes/dracula/dracula.zsh-theme
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tpm:
