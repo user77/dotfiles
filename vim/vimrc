@@ -1,11 +1,18 @@
 " term 256
 set t_Co=256
+
 " fix background colour issue
 set termguicolors
+
 " enable dracula theme
 packadd! dracula
 colorscheme dracula
+
 " enable syntax highlighting
 syntax enable
+
 " enable line numbers
 set number
+
+" enable mouse support
+se mouse+=a
