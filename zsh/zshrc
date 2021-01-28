@@ -100,5 +100,5 @@ alias vpn="~/.scripts/vpn.sh"
 
 # Prompt Stuff
 DRACULA_DISPLAY_CONTEXT=1
-NEWLINE=$'\n'
-PROMPT="$fg[blue]⠭$fg[green]%m${NEWLINE}${PROMPT}"
+#NEWLINE=$'\n'
+#PROMPT="$fg[blue]⠭$fg[green]%m${NEWLINE}${PROMPT}"
