@@ -1,0 +1,166 @@
+/* --------------------------------------------------------------------------
+ * Dracula Transparent Crimson Variant Layout for Waybar
+ * -------------------------------------------------------------------------- */
+
+/* Core Theme Colors Mapping */
+@define-color bg       #1e1f29; /* Darker Dracula base to match wallpaper shadow */
+@define-color current  #44475a; /* Selection / Container Border */
+@define-color fg       #f8f8f2; /* Crisp White */
+@define-color cyan     #8be9fd; /* Ice Cyan */
+@define-color green    #50fa7b; /* Neon Green */
+@define-color orange   #ffb86c; /* Warm Orange */
+@define-color pink     #ff79c6; /* Hot Neon Pink */
+@define-color purple   #bd93f9; /* Classic Purple */
+@define-color red      #ff5545; /* Crimson Flame */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 31, 41, 0.40); /* Highly transparent to let the wallpaper bleed through */
+    border-bottom: 1px solid rgba(68, 71, 90, 0.3); /* Subtle, thin border split */
+    color: @fg;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* --- Left Modules Group --- */
+
+#custom-wmname {
+    color: @pink;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @current;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    color: @pink;
+    border-bottom: 2px solid @pink;
+}
+
+#workspaces button.urgent {
+    color: @red;
+}
+
+/* Tightened grouping margins across stats items */
+#cpu, #temperature, #memory, #disk, #network {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#cpu {
+    color: @cyan;
+}
+
+#temperature {
+    color: @orange;
+}
+
+#temperature.critical {
+    color: @red;
+    background-color: rgba(255, 85, 69, 0.2);
+}
+
+#memory {
+    color: @purple;
+}
+
+#disk {
+    color: @pink;
+}
+
+#network {
+    color: @green;
+}
+
+/* --- Center Modules Group --- */
+
+#mpd {
+    color: @pink;
+    background-color: transparent; /* Muted flat layout to sit neutrally in bar */
+    padding: 0 15px;
+    border: none;
+}
+
+/* --- Right Modules Group --- */
+
+#idle_inhibitor {
+    color: @orange;
+    padding: 0 10px;
+}
+
+#backlight {
+    color: @cyan;
+    padding: 0 10px;
+}
+
+#battery {
+    color: @green;
+    padding-left: 10px;
+    padding-right: 4px;
+}
+
+#battery.warning {
+    color: @orange;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    color: @pink;
+    padding-left: 4px;
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+#pulseaudio {
+    color: @purple;
+    padding: 0 10px;
+}
+
+#clock {
+    color: @pink;
+    background-color: rgba(68, 71, 90, 0.6); /* Blended translucent dark block */
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+/* --- Structural Cleanup Items --- */
+
+#custom-separator {
+    color: rgba(68, 71, 90, 0.3);
+    font-size: 11px;
+    padding: 0 2px;
+}
+
+#tray {
+    padding: 0 10px;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(255, 85, 69, 0.4);
+        color: @fg;
+    }
+}
