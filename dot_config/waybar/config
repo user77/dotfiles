@@ -1,0 +1,230 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "width": 1920,
+    "margin": "3, 0, 2, 0",
+    
+    "modules-left": [
+        "custom/wmname",
+        "hyprland/workspaces",
+        "cpu",
+        "temperature",
+        "memory",
+        "disk",
+        "network", 
+        "custom/recorder", 
+        "custom/audiorec"
+    ],
+    "modules-center": [
+        "tray",
+        "mpd"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "custom/separator",
+        "backlight", 
+        "custom/separator",
+        "battery",
+        "power-profiles-daemon",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "clock"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "custom/wmname": {
+        "format": "",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "custom/language": {
+        "exec": "swaymsg --type get_inputs | grep \"xkb_active_layout_name\" | sed -u '1!d; s/^.*xkb_active_layout_name\": \"//; s/ (US)//; s/\",//' && swaymsg --type subscribe --monitor '[\"input\"]' | sed -u 's/^.*xkb_active_layout_name\": \"//; s/\",.*$//; s/ (US)//'"
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 6
+    },
+    "clock": {
+        "interval": 1,
+        "locale": "C", 
+        "format": " {:%I:%M %p}", // Clamped space
+        "format-alt": " {:%a,%b %d}"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "on-click": "kitty -e 'btop'"
+    },
+    "memory": {
+        "interval": 30,
+        "format": "󰍛 {used:0.2f}GB",
+        "max-length": 10,
+        "tooltip": false,
+        "warning": 70,
+        "critical": 90,
+        "on-click": "kitty ~/.local/bin/waybar-memory-smem"
+    },
+    "temperature": {
+        "thermal-zone": 0,
+        "hwmon-path-abs": "/sys/devices/platform/thinkpad_hwmon/hwmon",
+        "input-filename": "temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "on-click": "kitty s-tui"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "on-click": "kitty --hold sh -c 'dust -r -b / 2>/dev/null'"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%", // Clamped space
+        "format-icons": ["", ""],
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
+        "on-scroll-up": "brightnessctl -c backlight set +1%"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%", // Clamped space
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": " ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "✈ Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{essid}: {ipaddr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}", // Tightened string lockup
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "🎧",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "mpd": {
+        "format": "{stateIcon} {artist} - {title}",
+        "format-disconnected": "🎶",
+        "format-stopped": "♪",
+        "interval": 10,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "max-length": 45
+    },
+    "custom/recorder": {
+        "format": " Rec",
+        "format-disabled": " Off-air",
+        "return-type": "json",
+        "interval": 1,
+        "exec": "echo '{\"class\": \"recording\"}'",
+        "exec-if": "pgrep wf-recorder"
+    },
+    "custom/audiorec": {
+        "format": "♬ Rec",
+        "format-disabled": "♬ Off-air",
+        "return-type": "json",
+        "interval": 1,
+        "exec": "echo '{\"class\": \"audio recording\"}'",
+        "exec-if": "pgrep ffmpeg"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power Profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "", 
+            "balanced": "",     
+            "power-saver": ""    
+        }
+    }
+}
