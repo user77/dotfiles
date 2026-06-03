@@ -98,7 +98,7 @@
     "clock": {
         "interval": 1,
         "locale": "C", 
-        "format": " {:%H:%M}", // Clamped space
+        "format": " {:%H:%M}",
         "format-alt": " {:%a,%b %d}"
     },
     "cpu": {
