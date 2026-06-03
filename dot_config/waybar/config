@@ -157,7 +157,7 @@
         "tooltip-format": "{essid}: {ipaddr}"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}% {format_source}", // Tightened string lockup
+        "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{icon} {volume}% {format_source}",
         "format-bluetooth-muted": " {format_source}",
         "format-muted": " {format_source}",
