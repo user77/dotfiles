@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+# Dracula Theme Colors
+DRAC_BRACKET=$(tput setaf 6) 
+DRAC_TITLE=$(tput setaf 2)   
+DRAC_LINE=$(tput setaf 4)    
+RESET=$(tput sgr0)
+BOLD=$(tput bold)
+
+clear
+echo "${DRAC_BRACKET}[${RESET}${BOLD}${DRAC_TITLE} Interactive System Memory Monitor (PSS) ${RESET}${DRAC_BRACKET}]${RESET}"
+echo "${DRAC_LINE}------------------------------------------------------------${RESET}"
+echo " Type to search ANY process (e.g., 'kitty', 'hyprland', 'brave')"
+echo " Use UP/DOWN arrows to navigate | Press ESC or Enter to exit"
+echo "${DRAC_LINE}------------------------------------------------------------${RESET}"
+echo ""
+
+# We store the smem data in a variable first so we can cleanly 'exec' fzf
+DATA=$(smem -k -r -c "pid user uss rss pss command")
+
+# exec replaces the shell process entirely with fzf. 
+# When fzf exits, Kitty has no choice but to close instantly.
+exec fzf --header-lines=1 --ansi --layout=reverse --height=80% <<< "$DATA"
