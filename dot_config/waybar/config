@@ -155,7 +155,7 @@
         "format-disconnected": "✈ Disconnected",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{essid}: {ipaddr}",
-        "on-click": "orbit"
+        "on-click": "/usr/bin/orbit"
     },
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
