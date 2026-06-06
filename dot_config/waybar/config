@@ -12,7 +12,7 @@
         "temperature",
         "memory",
         "disk",
-        "network", 
+        "network",
         "custom/recorder", 
         "custom/audiorec"
     ],
@@ -153,12 +153,12 @@
         "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "✈ Disconnected",
-        //"format-alt": "{ifname}: {ipaddr}/{cidr}",
+    //    "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{essid}: {ipaddr}",
-        "on-click": "/usr/bin/orbit"
+        "on-click": "orbit toggle"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}% {format_source}",
+        "format": "{icon} {volume}% {format_source}", // Tightened string lockup
         "format-bluetooth": "{icon} {volume}% {format_source}",
         "format-bluetooth-muted": " {format_source}",
         "format-muted": " {format_source}",
